@@ -10,10 +10,6 @@
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
 
-<!-- Desenvolvimento -->
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white)
 
 <!-- Versionamento / DevOps -->
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
@@ -27,21 +23,21 @@
 
 <!-- Infraestrutura -->
 ![OpenTofu](https://img.shields.io/badge/OpenTofu-FFDA18?style=flat&logo=terraform&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white)
 ![NGINX](https://img.shields.io/badge/NGINX-009639?style=flat&logo=nginx&logoColor=white)
 
 <!-- Banco de Dados -->
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat&logo=rabbitmq&logoColor=white)
 ![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat&logo=apachekafka&logoColor=white)
 
 <!-- Observabilidade -->
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
-![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=flat)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=flat&logo=opentelemetry&logoColor=white)
 
 <!-- Segurança -->
-![DevSecOps](https://img.shields.io/badge/DevSecOps-6F42C1?style=flat)
+[![Trivy](https://img.shields.io/badge/Trivy-1904DA?style=flat&logo=trivy&logoColor=white)](https://trivy.dev/latest/docs/)
+[![Gitleaks](https://img.shields.io/badge/Gitleaks-161616?style=flat)](https://github.com/gitleaks/gitleaks)
+[![Cosign](https://img.shields.io/badge/Cosign-2D2D2D?style=flat)](https://docs.sigstore.dev/cosign/overview/)
 
 </div>
 
@@ -51,9 +47,9 @@
 
 Este repositório contém o material oficial do curso Engenharia DevOps, desenvolvido para apresentar os fundamentos, práticas, arquiteturas e tecnologias utilizadas na construção e operação de plataformas modernas de software.
 
-O curso adota uma abordagem End-to-End, percorrendo todas as etapas do ciclo de vida da entrega de software, desde o desenvolvimento até a operação em produção, integrando conceitos de Engenharia de Software, Infraestrutura como Código, Integração e Entrega Contínuas (CI/CD), Containers, Kubernetes, Observabilidade, Segurança e Computação em Nuvem.
+O curso adota uma abordagem End-to-End, percorrendo todas as etapas do ciclo de vida da entrega de software, desde o desenvolvimento até a operação em produção, integrando conceitos de Engenharia de Software, Infraestrutura como Código (IaC), Integração e Entrega Contínuas (CI/CD), Containers, Kubernetes, Observabilidade e Segurança.
 
-Mais do que ensinar ferramentas, o objetivo é formar profissionais capazes de compreender os fundamentos da Engenharia DevOps, analisar alternativas técnicas, avaliar trade-offs e tomar decisões fundamentadas na construção e evolução de plataformas modernas.
+O objetivo não é ensinar só as ferramentas, e sim formar profissionais capazes de compreender os fundamentos da Engenharia DevOps, analisar alternativas técnicas, avaliar trade-offs e tomar decisões fundamentadas na construção e evolução de plataformas modernas.
 
 Ao longo do curso, todas as tecnologias são apresentadas a partir de sua motivação, evolução, arquitetura, funcionamento interno, principais funcionalidades e aplicações práticas.
 
@@ -75,27 +71,26 @@ Este curso é destinado a:
 
 - Conhecimentos básicos de programação
 - Familiaridade com Git
-- Familiaridade com Linux e linha de comando
-- Familiaridade com bancos de dados
+- Familiaridade com desenvolvimento de sistemas e bancos de dados
 
 ---
 
 ## 📚 Livros utilizados como referência
 
 <p align="center">
-  <a href="https://itrevolution.com/product/the-devops-handbook-second-edition/" target="_blank">
-    <img src="images/books/devops-handbook.jpg" width="200"/>
+  <a href="https://a.co/d/0dBZSndQ" target="_blank">
+    <img src="assets/books/kim.jpg" width="200"/>
   </a>
-  <a href="https://itrevolution.com/product/accelerate/" target="_blank">
-    <img src="images/books/accelerate.jpg" width="200"/>
+  <a href="https://a.co/d/0aB2RmPD" target="_blank">
+    <img src="assets/books/forsgren.jpg" width="204"/>
   </a>
-  <a href="https://www.oreilly.com/library/view/kubernetes-up-and/9781098110192/" target="_blank">
-    <img src="images/books/kubernetes-up-and-running.jpg" width="200"/>
+  <a href="https://a.co/d/0d8kGwDi" target="_blank">
+    <img src="assets/books/burns.jpg" width="233"/>
   </a>
 </p>
 
-- **Kim, G.; Humble, J.; Debois, P.; Willis, J.; Forsgren, N.**  
-  *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*. 2nd ed. IT Revolution Press, 2021.
+- **Kim, G.; Humble, J.; Debois, P.; Willis, J.**
+  *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*. 1st ed. IT Revolution Press, 2016.
 
 - **Forsgren, N.; Humble, J.; Kim, G.**  
   *Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations*. 1st ed. IT Revolution Press, 2018.
@@ -112,7 +107,6 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 ### Sistemas Operacionais
 
 - [Ubuntu](https://ubuntu.com/tutorials)
-- [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/windows/wsl/)
 
 ### Controle de Versão
 
@@ -138,13 +132,8 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - [OpenTofu](https://opentofu.org/docs/)
 - [Terraform](https://developer.hashicorp.com/terraform/docs)
 
-### Computação em Nuvem
+### Mensageria
 
-- [Microsoft Learn - Azure](https://learn.microsoft.com/azure/)
-
-### Banco de Dados e Mensageria
-
-- [PostgreSQL](https://www.postgresql.org/docs/)
 - [RabbitMQ](https://www.rabbitmq.com/documentation.html)
 - [Apache Kafka](https://kafka.apache.org/documentation/)
 
@@ -165,12 +154,6 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - [Gitleaks](https://github.com/gitleaks/gitleaks)
 - [Cosign](https://docs.sigstore.dev/cosign/overview/)
 - [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
-
-### Desenvolvimento
-
-- [Node.js](https://nodejs.org/docs/latest/api/)
-- [TypeScript](https://www.typescriptlang.org/docs/)
-- [NestJS](https://docs.nestjs.com/)
 
 ---
 ## 🗂️ Estrutura do curso
@@ -207,12 +190,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Automação com Shell Script
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -227,12 +208,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Nginx
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -250,12 +229,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Git Flow
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -269,11 +246,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Wiki
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -286,11 +262,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Self-hosted
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -305,11 +280,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Estratégias
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -322,11 +296,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Canary
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -335,11 +308,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Automatização completa do pipeline
 
 *Material de apoio*
-- 📄 [Atividade]()
-- 🖼️ [Slide]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -356,11 +328,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Networks
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -373,11 +344,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Aplicações completas
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -386,10 +356,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Containerização da plataforma
 
 *Material de apoio*
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -405,11 +375,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Deployments
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -423,11 +392,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Helm
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -436,10 +404,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Deploy da plataforma em Kubernetes
 
 *Material de apoio*
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -452,11 +420,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Alertas
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -467,11 +434,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - OpenTelemetry
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -480,10 +446,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Observabilidade completa da plataforma
 
 *Material de apoio*
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -497,11 +463,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - States
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -513,11 +478,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Trade-offs
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -526,10 +490,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Provisionamento da infraestrutura
 
 *Material de apoio*
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -544,11 +508,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Cosign
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -557,10 +520,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Integração da segurança ao pipeline
 
 *Material de apoio*
-- 📄 [Atividade]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -573,11 +536,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Platform Engineering
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -587,11 +549,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Python
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -600,11 +561,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Evolução da plataforma para ambiente de produção
 
 *Material de apoio*
-- 📄 [Atividade]()
-- 🖼️ [Slide]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -619,11 +579,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Tendências
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 🔗 [Laboratório]()
+- ...
 
 *Referências*
-- *
+- ...
 
 ---
 
@@ -632,14 +591,14 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 <table>
   <tr>
     <td width="200" valign="top" align="center">
-      <img src="images/profile/photo.png" alt="Foto do autor" width="180"/>
+      <img src="assets/profile/photo.png" alt="Foto do autor" width="180"/>
     </td>
     <td valign="top">
       <p>
         Estudante do Bacharelado em Tecnologia da Informação pela Universidade Federal do Rio Grande do Norte (UFRN).
-        Trabalha com Engenharia de Software e Multi-Agent Systems. Foi estagiário no Senac RN, trabalhando nas mesmas frentes.
+        Trabalha com Engenharia de Software e IA. Foi estagiário no Senac RN, trabalhando nas mesmas frentes.
         Participou do projeto de pesquisa "IApps: desenvolvimento e entrega de aplicativos inteligentes no contexto de áreas emergentes",
-        onde publicou diversos artigos nacionais e um artigo internacional, que já conta com quase 200 visualizações e 2 citações.
+        onde publicou diversos artigos nacionais e um artigo internacional, que já conta com mais 200 visualizações e 4 citações.
         Também foi pesquisador no InovAI Lab, no plano de trabalho "Aprendizagem Profunda Aplicada à Predição de Risco de Mortalidade em
         Recém-nascidos Prematuros" onde foi selecionado para concorrer o 8º prêmio destaque na iniciação científica e tecnológica da UFRN.
         Além disso, atuou como bolsista do Programa de Educação Tutorial (PET) de Ciência da Computação da UFRN e como bolsista de Apoio
@@ -669,3 +628,5 @@ Este repositório está licenciado sob a **Creative Commons Attribution–NonCom
 
 Para mais informações, consulte o arquivo [LICENSE](LICENSE) ou a licença oficial em:  
 https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt-br
+
+[![Licença Creative Commons CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt-br)
