@@ -78,19 +78,19 @@ Este curso é destinado a:
 ## 📚 Livros utilizados como referência
 
 <p align="center">
-  <a href="https://a.co/d/0dBZSndQ" target="_blank">
+  <a href="https://a.co/d/0b4Xefu7" target="_blank">
     <img src="assets/books/kim.jpg" width="200"/>
   </a>
   <a href="https://a.co/d/0aB2RmPD" target="_blank">
-    <img src="assets/books/forsgren.jpg" width="204"/>
+    <img src="assets/books/forsgren.jpg" width="200"/>
   </a>
   <a href="https://a.co/d/0d8kGwDi" target="_blank">
-    <img src="assets/books/burns.jpg" width="233"/>
+    <img src="assets/books/burns.jpg" width="229"/>
   </a>
 </p>
 
 - **Kim, G.; Humble, J.; Debois, P.; Willis, J.**
-  *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*. 1st ed. IT Revolution Press, 2016.
+  *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*. 2 ed. IT Revolution Press, 2021.
 
 - **Forsgren, N.; Humble, J.; Kim, G.**  
   *Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations*. 1st ed. IT Revolution Press, 2018.
@@ -170,12 +170,19 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Engenharia DevOps moderna
 
 *Material de apoio*
-- 🖼️ [Slide]()
-- 📄 [Atividade]()
-- 🔗 [Material complementar]()
+- 🖼️ [Slide](https://canva.link/y97anu729365xka)
 
 *Referências*
-- *
+- *Kim, Prefácio; Parte I — Introdução*
+- *Kim, Cap. 1 — Agile, Continuous Delivery, and the Three Ways*
+- *Kim, Cap. 4 — The Third Way: The Principles of Continual Learning and Experimentation*
+- *Kim, Cap. 8 — How to Get Great Outcomes by Integrating Operations into the Daily Work of Development*
+- *Forsgren, Cap. 1–2*
+- *Forsgren, Cap. 3 (p. 29–40) — Measuring and Changing Culture*
+- *Forsgren, Cap. 4 (p. 41–57) — Technical Practices*
+- *Forsgren, Cap. 5 (p. 59–68) — Architecture*
+- *Forsgren, Cap. 7–8*
+- *Forsgren, Apêndice A — Capabilities to Drive Improvement*
 
 ---
 
@@ -473,7 +480,6 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 #### 7.2 Computação em Nuvem
 
 - Cloud Agnostic
-- Azure
 - Recursos Gerenciados
 - Trade-offs
 
