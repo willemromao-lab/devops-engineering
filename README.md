@@ -532,7 +532,7 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 ### Módulo 7 — Infraestrutura Moderna
 
-#### 7.1 Infraestrutura como Código
+#### 7.1 Infraestrutura como Código (IaC)
 
 - OpenTofu
 - Terraform
