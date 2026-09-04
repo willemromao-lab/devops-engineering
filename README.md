@@ -308,7 +308,7 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 ---
 
-#### 3.2 Continuous Delivery e Deployment
+#### 3.2 Continuous Delivery e Deployment (CD)
 
 - CD
 - Estratégias de Deploy
