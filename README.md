@@ -310,7 +310,6 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 #### 3.2 Continuous Delivery e Deployment (CD)
 
-- CD
 - Estratégias de Deploy
 - Blue/Green
 - Rolling Update
@@ -682,7 +681,7 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
         Estudante do Bacharelado em Tecnologia da Informação pela Universidade Federal do Rio Grande do Norte (UFRN).
         Trabalha com Engenharia de Software e IA. Foi estagiário no Senac RN, trabalhando nas mesmas frentes.
         Participou do projeto de pesquisa "IApps: desenvolvimento e entrega de aplicativos inteligentes no contexto de áreas emergentes",
-        onde publicou diversos artigos nacionais e um artigo internacional, que já conta com mais 200 visualizações e 4 citações.
+        onde publicou diversos artigos nacionais e um artigo internacional, que já conta com mais de 200 visualizações e 4 citações.
         Também foi pesquisador no InovAI Lab, no plano de trabalho "Aprendizagem Profunda Aplicada à Predição de Risco de Mortalidade em
         Recém-nascidos Prematuros" onde foi selecionado para concorrer o 8º prêmio destaque na iniciação científica e tecnológica da UFRN.
         Além disso, atuou como bolsista do Programa de Educação Tutorial (PET) de Ciência da Computação da UFRN e como bolsista de Apoio
