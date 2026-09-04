@@ -33,6 +33,10 @@
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
 ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=flat&logo=opentelemetry&logoColor=white)
+![Datadog](https://img.shields.io/badge/Datadog-632CA6?style=flat&logo=datadog&logoColor=white)
+
+<!-- GitOps -->
+![Argo CD](https://img.shields.io/badge/Argo%20CD-EF7B4D?style=flat&logo=argo&logoColor=white)
 
 <!-- Segurança -->
 [![Trivy](https://img.shields.io/badge/Trivy-1904DA?style=flat&logo=trivy&logoColor=white)](https://trivy.dev/latest/docs/)
@@ -132,6 +136,11 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - [OpenTofu](https://opentofu.org/docs/)
 - [Terraform](https://developer.hashicorp.com/terraform/docs)
 
+### GitOps
+
+- [Argo CD](https://argo-cd.readthedocs.io/)
+- [Flux](https://fluxcd.io/flux/)
+
 ### Mensageria
 
 - [RabbitMQ](https://www.rabbitmq.com/documentation.html)
@@ -143,6 +152,7 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - [Grafana](https://grafana.com/docs/)
 - [Loki](https://grafana.com/docs/loki/latest/)
 - [OpenTelemetry](https://opentelemetry.io/docs/)
+- [Datadog](https://docs.datadoghq.com/)
 
 ### Proxy Reverso
 
@@ -172,7 +182,9 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 *Material de apoio*
 - 🖼️ [Slide](https://canva.link/y97anu729365xka)
 
-*Referências*
+<details>
+  <summary><em>Referências</em></summary>
+
 - *Kim, Prefácio; Parte I — Introdução*
 - *Kim, Cap. 1 — Agile, Continuous Delivery, and the Three Ways*
 - *Kim, Cap. 4 — The Third Way: The Principles of Continual Learning and Experimentation*
@@ -183,6 +195,8 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - *Forsgren, Cap. 5 (p. 59–68) — Architecture*
 - *Forsgren, Cap. 7–8*
 - *Forsgren, Apêndice A — Capabilities to Drive Improvement*
+
+</details>
 
 ---
 
@@ -406,7 +420,43 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 ---
 
-#### 5.3 Projeto
+#### 5.3 Workloads Distribuídos e Mensageria
+
+- Arquiteturas assíncronas e orientadas a eventos
+- RabbitMQ
+- Apache Kafka
+- Deploy e operação de brokers
+- Persistência e alta disponibilidade
+- Escalabilidade de Consumers
+- Monitoramento e troubleshooting
+
+*Material de apoio*
+- ...
+
+*Referências*
+- ...
+
+---
+
+#### 5.4 GitOps
+
+- Conceito de GitOps
+- Git como fonte de verdade
+- Estado desejado e reconciliação
+- Push vs Pull deployment
+- GitOps com Kubernetes
+- Argo CD
+- Flux
+
+*Material de apoio*
+- ...
+
+*Referências*
+- ...
+
+---
+
+#### 5.5 Projeto
 
 - Deploy da plataforma em Kubernetes
 
@@ -422,8 +472,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 #### 6.1 Monitoramento
 
-- Prometheus
+- Fundamentos de Observabilidade
 - Métricas
+- Prometheus
+- Grafana
 - Alertas
 
 *Material de apoio*
@@ -436,9 +488,11 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 #### 6.2 Logging e Tracing
 
-- Grafana
+- Logs centralizados
 - Loki
+- Distributed Tracing
 - OpenTelemetry
+- Correlação entre logs, métricas e traces
 
 *Material de apoio*
 - ...
@@ -448,7 +502,23 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 ---
 
-#### 6.3 Projeto
+#### 6.3 Observabilidade com Datadog
+
+- Infrastructure Monitoring
+- Kubernetes Monitoring
+- Logs
+- APM e Tracing
+- Dashboards e Alertas
+
+*Material de apoio*
+- ...
+
+*Referências*
+- ...
+
+---
+
+#### 6.4 Projeto
 
 - Observabilidade completa da plataforma
 
@@ -479,9 +549,13 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 #### 7.2 Computação em Nuvem
 
+- Fundamentos de Cloud Computing
+- IaaS, PaaS e SaaS
+- Regiões e Zonas de Disponibilidade
+- Serviços Gerenciados e Self-hosted
+- Escalabilidade e Alta Disponibilidade
+- Custos e modelos de cobrança
 - Cloud Agnostic
-- Recursos Gerenciados
-- Trade-offs
 
 *Material de apoio*
 - ...
@@ -538,6 +612,10 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 #### 9.1 Operação
 
 - SRE
+- SLI
+- SLO
+- SLA
+- Error Budget
 - FinOps
 - Platform Engineering
 
