@@ -235,18 +235,30 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 #### 1.2 Linux para Engenharia DevOps
 - Estrutura do Linux
 - Sistema de arquivos
-- Permissões
+- Gerenciamento de arquivos
 - Usuários e grupos
+- Permissões
 - Processos
-- Serviços (systemd)
+- Gerenciamento de pacotes
+- Serviços com systemd
+- Logs e troubleshooting
+- SSH
 - Bash
 - Automação com Shell Script
 
 *Material de apoio*
 - ...
 
-*Referências*
-- ...
+<details>
+  <summary><em>Referências</em></summary>
+
+- **Nemeth, Cap. 1 — Where to Start**
+
+- **Nemeth, Cap. 5 — The Filesystem**
+
+- **Nemeth, Cap. 7 (p. 182–198) — Scripting and the Shell**
+
+</details>
 
 ---
 
