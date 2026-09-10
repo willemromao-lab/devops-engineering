@@ -81,23 +81,55 @@ Este curso é destinado a:
 
 ## 📚 Livros utilizados como referência
 
-<p align="center">
-  <a href="https://a.co/d/0b4Xefu7" target="_blank">
-    <img src="assets/books/kim.jpg" width="200"/>
-  </a>
-  <a href="https://a.co/d/0aB2RmPD" target="_blank">
-    <img src="assets/books/forsgren.jpg" width="200"/>
-  </a>
-  <a href="https://a.co/d/0d8kGwDi" target="_blank">
-    <img src="assets/books/burns.jpg" width="229"/>
-  </a>
-</p>
+<table align="center" cellspacing="12" cellpadding="0">
+  <tr>
+    <td align="center" valign="bottom">
+      <a href="https://a.co/d/0b4Xefu7" target="_blank">
+        <img src="assets/books/kim.jpg" height="280"/>
+      </a>
+    </td>
+    <td align="center" valign="bottom">
+      <a href="https://a.co/d/0aB2RmPD" target="_blank">
+        <img src="assets/books/forsgren.jpg" height="280"/>
+      </a>
+    </td>
+    <td align="center" valign="bottom">
+      <a href="https://a.co/d/02P35Tpb" target="_blank">
+        <img src="assets/books/nemeth.jpg" height="280"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <table cellspacing="12" cellpadding="0">
+        <tr>
+          <td align="center" valign="bottom">
+            <a href="https://a.co/d/037Ff9A9" target="_blank">
+              <img src="assets/books/kurose.jpg" height="280"/>
+            </a>
+          </td>
+          <td align="center" valign="bottom">
+            <a href="https://a.co/d/0d8kGwDi" target="_blank">
+              <img src="assets/books/burns.jpg" height="280"/>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
 - **Kim, G.; Humble, J.; Debois, P.; Willis, J.**
   *The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations*. 2 ed. IT Revolution Press, 2021.
 
 - **Forsgren, N.; Humble, J.; Kim, G.**  
   *Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations*. 1st ed. IT Revolution Press, 2018.
+
+- **Nemeth, E.; Snyder, G.; Hein, T. R.; Whaley, B.; Mackin, D.**  
+*UNIX and Linux System Administration Handbook*. 5th ed. Pearson, 2018.
+
+- **Kurose, J. F.; Ross, K. W.**  
+*Computer Networking: A Top-Down Approach*. 8th ed. Pearson, 2021.
 
 - **Burns, B.; Beda, J.; Hightower, K.; Evenson, L.**  
   *Kubernetes: Up & Running: Dive into the Future of Infrastructure*. 3rd ed. O’Reilly Media, 2022.
