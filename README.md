@@ -253,11 +253,11 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 <details>
   <summary><em>Referências</em></summary>
 
-- **Nemeth, Cap. 1 — Where to Start**
+- *Nemeth, Cap. 1 — Where to Start*
 
-- **Nemeth, Cap. 5 — The Filesystem**
+- *Nemeth, Cap. 5 — The Filesystem*
 
-- **Nemeth, Cap. 7 (p. 182–198) — Scripting and the Shell**
+- *Nemeth, Cap. 7 (p. 182–198) — Scripting and the Shell*
 
 </details>
 
