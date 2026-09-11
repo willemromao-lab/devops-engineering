@@ -14,17 +14,17 @@ O objetivo não é memorizar comandos, mas desenvolver familiaridade com o ambie
 
 Ao final desta prática, você deverá ser capaz de:
 
-- identificar informações básicas sobre o sistema Linux;
-- navegar pelo filesystem;
-- trabalhar com caminhos absolutos e relativos;
-- criar, copiar, mover e remover arquivos e diretórios;
-- visualizar e inspecionar arquivos;
-- localizar arquivos e pesquisar conteúdo;
-- compreender `stdin`, `stdout` e `stderr`;
-- redirecionar entrada e saída;
-- combinar programas utilizando pipes;
-- utilizar filtros comuns do ambiente Unix/Linux;
-- aplicar esses recursos em uma pequena investigação de logs.
+* identificar informações básicas sobre o sistema Linux;
+* navegar pelo filesystem;
+* trabalhar com caminhos absolutos e relativos;
+* criar, copiar, mover e remover arquivos e diretórios;
+* visualizar e inspecionar arquivos;
+* localizar arquivos e pesquisar conteúdo;
+* compreender `stdin`, `stdout` e `stderr`;
+* redirecionar entrada e saída;
+* combinar programas utilizando pipes;
+* utilizar filtros comuns do ambiente Unix/Linux;
+* aplicar esses recursos em uma pequena investigação de logs.
 
 ---
 
@@ -132,7 +132,7 @@ Fedora       → distribuição
 
 O shell interpreta os comandos digitados no terminal.
 
-Execute:
+A variável `SHELL` normalmente informa o **shell de login configurado para o usuário**:
 
 ```bash
 echo "$SHELL"
@@ -144,7 +144,19 @@ Uma saída comum é:
 /bin/bash
 ```
 
-Verifique a versão do Bash:
+Isso não garante, porém, que esse seja o shell que está executando a sessão atual. Para observar o processo de shell associado à sessão atual, execute:
+
+```bash
+ps -p $$ -o comm=
+```
+
+Em uma sessão Bash, uma saída comum é:
+
+```text
+bash
+```
+
+Verifique a versão do Bash instalada:
 
 ```bash
 bash --version
@@ -180,11 +192,7 @@ cp --help
 
 ## Manual do sistema
 
-Linux possui páginas de manual acessíveis através do comando:
-
-```bash
-man
-```
+Linux possui páginas de manual acessíveis através do comando `man`.
 
 Exemplo:
 
@@ -597,6 +605,8 @@ Crie:
 mkdir ~/devops-linux-lab
 ```
 
+> Se esse diretório já existir por causa de uma execução anterior da prática, utilize um diretório novo ou limpe conscientemente o laboratório anterior antes de continuar. Isso evita que arquivos antigos alterem os resultados esperados.
+
 Entre nele:
 
 ```bash
@@ -1001,10 +1011,17 @@ Para remover um diretório vazio:
 rmdir teste
 ```
 
-Se o diretório possuir arquivos, normalmente será necessário utilizar uma operação recursiva:
+Se o diretório possuir arquivos, normalmente será necessário utilizar uma operação recursiva. Crie novamente um diretório de teste com um arquivo dentro:
 
 ```bash
-rm -r diretorio
+mkdir teste
+touch teste/exemplo.txt
+```
+
+Agora remova o diretório e seu conteúdo:
+
+```bash
+rm -r teste
 ```
 
 Tenha cuidado com `rm -r`, especialmente quando executado com privilégios administrativos.
@@ -1226,13 +1243,16 @@ Utilize:
 wc -l logs/application.log
 ```
 
-`wc` pode contar:
+`wc` pode contar diferentes unidades. Algumas opções importantes são:
 
 ```text
-linhas
-palavras
-bytes/caracteres
+-l   linhas
+-w   palavras
+-c   bytes
+-m   caracteres
 ```
+
+Sem opções, `wc` normalmente apresenta **linhas, palavras e bytes**.
 
 Exemplo:
 
@@ -1455,8 +1475,8 @@ ls config arquivo-inexistente
 
 O comando produzirá:
 
-- uma saída válida;
-- uma mensagem de erro.
+* uma saída válida;
+* uma mensagem de erro.
 
 Agora:
 
@@ -1648,11 +1668,7 @@ WARN
 
 `uniq` identifica linhas repetidas adjacentes.
 
-Por isso, normalmente aparece combinado com:
-
-```bash
-sort
-```
+Por isso, normalmente aparece combinado com `sort`.
 
 Execute:
 
@@ -1762,9 +1778,9 @@ Normalmente, quando utilizamos um pipe, a saída segue para o próximo programa.
 
 O comando `tee` permite:
 
-- mostrar a saída;
-- salvar uma cópia em arquivo;
-- continuar o pipeline.
+* mostrar a saída;
+* salvar uma cópia em arquivo;
+* continuar o pipeline.
 
 Execute:
 
@@ -1818,10 +1834,16 @@ head -n 5 logs/application.log
 tail -n 5 logs/application.log
 ```
 
-Últimas cinco contendo erro:
+Entre as últimas cinco linhas do arquivo, mostrar apenas as que contêm `ERROR`:
 
 ```bash
 tail -n 5 logs/application.log | grep "ERROR"
+```
+
+Se a intenção for obter os **últimos cinco eventos de erro**, a ordem deve ser invertida:
+
+```bash
+grep "ERROR" logs/application.log | tail -n 5
 ```
 
 Em ambientes reais, operações desse tipo são comuns durante análise de logs.
@@ -1928,9 +1950,9 @@ Construa a análise progressivamente.
 
 ## Etapa 1 — Quantas linhas existem no log?
 
-Utilize:
+Utilize o comando:
 
-```bash
+```text
 wc
 ```
 
@@ -1938,9 +1960,9 @@ wc
 
 ## Etapa 2 — Quais eventos são erros?
 
-Utilize:
+Utilize o comando:
 
-```bash
+```text
 grep
 ```
 
@@ -2148,30 +2170,28 @@ tail -n +2 data/users.csv | cut -d',' -f3 | sort | uniq -c
 
 # 58. Um exemplo próximo da rotina DevOps
 
-Imagine que uma aplicação produza milhares de linhas de log.
-
-Uma investigação inicial poderia começar com:
+Imagine que uma aplicação produza milhares de linhas de log. Continuando com o arquivo utilizado nesta prática, uma investigação inicial poderia começar com:
 
 ```bash
-tail -n 1000 application.log
+tail -n 1000 logs/application.log
 ```
 
 Depois:
 
 ```bash
-tail -n 1000 application.log | grep "ERROR"
+tail -n 1000 logs/application.log | grep "ERROR"
 ```
 
 Depois:
 
 ```bash
-tail -n 1000 application.log | grep "ERROR" | wc -l
+tail -n 1000 logs/application.log | grep "ERROR" | wc -l
 ```
 
 Talvez também seja necessário identificar quais componentes apresentam problemas:
 
 ```bash
-tail -n 1000 application.log \
+tail -n 1000 logs/application.log \
   | grep "ERROR" \
   | cut -d' ' -f3 \
   | sort \
@@ -2196,51 +2216,52 @@ pipes permitem combinar essas pequenas operações
 
 # 59. Comandos utilizados nesta prática
 
-| Comando | Finalidade |
-|---|---|
-| `whoami` | Mostrar usuário atual |
-| `hostname` | Mostrar nome da máquina |
-| `uname` | Informações sobre kernel e sistema |
-| `pwd` | Mostrar diretório atual |
-| `ls` | Listar arquivos e diretórios |
-| `cd` | Mudar de diretório |
-| `mkdir` | Criar diretório |
-| `touch` | Criar arquivo vazio ou atualizar timestamp |
-| `cp` | Copiar arquivos |
-| `mv` | Mover ou renomear |
-| `rm` | Remover arquivos |
-| `rmdir` | Remover diretórios vazios |
-| `cat` | Exibir conteúdo |
-| `less` | Navegar por conteúdo |
-| `head` | Mostrar início de um arquivo |
-| `tail` | Mostrar final de um arquivo |
-| `file` | Identificar tipo de arquivo |
-| `stat` | Exibir metadados |
-| `ln` | Criar links |
-| `find` | Localizar arquivos |
-| `grep` | Pesquisar padrões |
-| `wc` | Contar linhas, palavras ou caracteres |
-| `cut` | Extrair campos |
-| `sort` | Ordenar linhas |
-| `uniq` | Agrupar/remover linhas duplicadas adjacentes |
-| `tee` | Mostrar e copiar um fluxo |
-| `man` | Consultar documentação |
+| Comando    | Finalidade                                   |
+| ---------- | -------------------------------------------- |
+| `whoami`   | Mostrar usuário atual                        |
+| `hostname` | Mostrar nome da máquina                      |
+| `uname`    | Informações sobre kernel e sistema           |
+| `ps`       | Exibir informações sobre processos           |
+| `pwd`      | Mostrar diretório atual                      |
+| `ls`       | Listar arquivos e diretórios                 |
+| `cd`       | Mudar de diretório                           |
+| `mkdir`    | Criar diretório                              |
+| `touch`    | Criar arquivo vazio ou atualizar timestamp   |
+| `cp`       | Copiar arquivos                              |
+| `mv`       | Mover ou renomear                            |
+| `rm`       | Remover arquivos                             |
+| `rmdir`    | Remover diretórios vazios                    |
+| `cat`      | Exibir conteúdo                              |
+| `less`     | Navegar por conteúdo                         |
+| `head`     | Mostrar início de um arquivo                 |
+| `tail`     | Mostrar final de um arquivo                  |
+| `file`     | Identificar tipo de arquivo                  |
+| `stat`     | Exibir metadados                             |
+| `ln`       | Criar links                                  |
+| `find`     | Localizar arquivos                           |
+| `grep`     | Pesquisar padrões                            |
+| `wc`       | Contar linhas, palavras, bytes ou caracteres |
+| `cut`      | Extrair campos                               |
+| `sort`     | Ordenar linhas                               |
+| `uniq`     | Agrupar/remover linhas duplicadas adjacentes |
+| `tee`      | Mostrar e copiar um fluxo                    |
+| `man`      | Consultar documentação                       |
 
 ---
 
 # 60. Operadores importantes
 
-| Operador | Função |
-|---|---|
-| `.` | Diretório atual |
-| `..` | Diretório pai |
-| `~` | Diretório home |
-| `*` | Corresponde a múltiplos caracteres |
-| `>` | Redireciona stdout sobrescrevendo |
-| `>>` | Redireciona stdout acrescentando |
-| `<` | Redireciona stdin |
-| `2>` | Redireciona stderr |
-| `|` | Conecta stdout ao stdin de outro programa |
+| Operador | Função                                                    |                                           |
+| -------- | --------------------------------------------------------- | ----------------------------------------- |
+| `.`      | Diretório atual                                           |                                           |
+| `..`     | Diretório pai                                             |                                           |
+| `~`      | Diretório home                                            |                                           |
+| `*`      | Corresponde a zero ou mais caracteres em padrões do shell |                                           |
+| `>`      | Redireciona stdout sobrescrevendo                         |                                           |
+| `>>`     | Redireciona stdout acrescentando                          |                                           |
+| `<`      | Redireciona stdin                                         |                                           |
+| `2>`     | Redireciona stderr                                        |                                           |
+| `        | `                                                         | Conecta stdout ao stdin de outro programa |
 
 ---
 
@@ -2258,17 +2279,7 @@ Confira os arquivos:
 ls
 ```
 
-Tenha cuidado principalmente com:
-
-```bash
-rm
-```
-
-e:
-
-```bash
-rm -r
-```
+Tenha cuidado principalmente com `rm` e `rm -r`.
 
 Em ambientes de produção, valide sempre:
 
@@ -2320,21 +2331,21 @@ rm -r ~/devops-linux-lab
 
 Ao concluir a prática, verifique se você consegue realizar as seguintes tarefas sem consultar diretamente a solução:
 
-- descobrir usuário, hostname, distribuição e versão do kernel;
-- identificar seu diretório atual;
-- navegar utilizando caminhos absolutos e relativos;
-- compreender `.`, `..` e `~`;
-- criar arquivos e diretórios;
-- copiar, mover e remover arquivos;
-- visualizar início e final de arquivos;
-- acompanhar um log com `tail -f`;
-- localizar arquivos com `find`;
-- pesquisar conteúdo utilizando `grep`;
-- diferenciar `stdin`, `stdout` e `stderr`;
-- utilizar `>`, `>>`, `<` e `2>`;
-- construir pipelines utilizando `|`;
-- combinar `grep`, `cut`, `sort`, `uniq` e `wc`;
-- utilizar `tee` para visualizar e salvar uma saída.
+* descobrir usuário, hostname, distribuição e versão do kernel;
+* identificar seu diretório atual;
+* navegar utilizando caminhos absolutos e relativos;
+* compreender `.`, `..` e `~`;
+* criar arquivos e diretórios;
+* copiar, mover e remover arquivos;
+* visualizar início e final de arquivos;
+* acompanhar um log com `tail -f`;
+* localizar arquivos com `find`;
+* pesquisar conteúdo utilizando `grep`;
+* diferenciar `stdin`, `stdout` e `stderr`;
+* utilizar `>`, `>>`, `<` e `2>`;
+* construir pipelines utilizando `|`;
+* combinar `grep`, `cut`, `sort`, `uniq` e `wc`;
+* utilizar `tee` para visualizar e salvar uma saída.
 
 ---
 
@@ -2360,11 +2371,11 @@ Esses conceitos serão utilizados para compreender como Linux controla **quem po
 
 # Referências
 
-**NEMETH, E.; SNYDER, G.; HEIN, T. R.; WHALEY, B.; MACKIN, D.**  
+**NEMETH, E.; SNYDER, G.; HEIN, T. R.; WHALEY, B.; MACKIN, D.**
 *UNIX and Linux System Administration Handbook*. 5. ed. Pearson, 2018.
 
 Capítulos utilizados:
 
-- **Cap. 1 — Where to Start**
-- **Cap. 5 — The Filesystem**
-- **Cap. 7 — Scripting and the Shell**
+* **Cap. 1 — Where to Start**
+* **Cap. 5 — The Filesystem**
+* **Cap. 7 — Scripting and the Shell**
