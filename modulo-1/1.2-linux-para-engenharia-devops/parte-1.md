@@ -2251,17 +2251,17 @@ pipes permitem combinar essas pequenas operações
 
 # 60. Operadores importantes
 
-| Operador | Função                                                    |                                           |
-| -------- | --------------------------------------------------------- | ----------------------------------------- |
-| `.`      | Diretório atual                                           |                                           |
-| `..`     | Diretório pai                                             |                                           |
-| `~`      | Diretório home                                            |                                           |
-| `*`      | Corresponde a zero ou mais caracteres em padrões do shell |                                           |
-| `>`      | Redireciona stdout sobrescrevendo                         |                                           |
-| `>>`     | Redireciona stdout acrescentando                          |                                           |
-| `<`      | Redireciona stdin                                         |                                           |
-| `2>`     | Redireciona stderr                                        |                                           |
-| `        | `                                                         | Conecta stdout ao stdin de outro programa |
+| Operador | Função |
+| --- | --- |
+| `.` | Diretório atual |
+| `..` | Diretório pai |
+| `~` | Diretório home |
+| `*` | Corresponde a zero ou mais caracteres em padrões do shell |
+| `>` | Redireciona stdout sobrescrevendo |
+| `>>` | Redireciona stdout acrescentando |
+| `<` | Redireciona stdin |
+| `2>` | Redireciona stderr |
+| <code>&#124;</code> | Conecta stdout ao stdin de outro programa |
 
 ---
 
