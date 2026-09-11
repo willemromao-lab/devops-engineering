@@ -1,6 +1,6 @@
 # 1.2 — Linux para Engenharia DevOps
 
-## Prática 01 — Terminal, Filesystem, Pipes e Redirecionamento
+## Laboratório 1 — Terminal, Filesystem, Pipes e Redirecionamento
 
 Este material complementa a aula teórica **Linux para Engenharia DevOps**.
 

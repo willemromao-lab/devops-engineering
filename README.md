@@ -248,7 +248,7 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 *Material de apoio*
 - 🖼️ [Slide (parte 1)](https://canva.link/s5007mv5aivxhl7)
-- 📄 [Práticas](/modulo-1/1.2-linux-para-engenharia-devops/)
+- 📄 [Laboratórios](/modulo-1/1.2-linux-para-engenharia-devops/sumário.md)
 
 <details>
   <summary><em>Referências</em></summary>
