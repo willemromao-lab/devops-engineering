@@ -238,8 +238,8 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 - Gerenciamento de arquivos
 - Usuários e grupos
 - Permissões
-- Processos
 - Gerenciamento de pacotes
+- Processos
 - Serviços com systemd
 - Logs e troubleshooting
 - SSH
@@ -248,16 +248,27 @@ Durante o curso, serão utilizadas as seguintes tecnologias e plataformas:
 
 *Material de apoio*
 - 🖼️ [Slide (parte 1)](https://canva.link/s5007mv5aivxhl7)
+- 🖼️ [Slide (parte 2)](https://canva.link/p0fsrjb0ptijobv)
 - 📄 [Laboratórios](/modulo-1/1.2-linux-para-engenharia-devops/sumário.md)
 
 <details>
   <summary><em>Referências</em></summary>
 
-- *Nemeth, Cap. 1 — Where to Start*
+- **Nemeth, Cap. 1 — Where to Start**
 
-- *Nemeth, Cap. 5 — The Filesystem*
+- **Nemeth, Cap. 5 — The Filesystem**
 
-- *Nemeth, Cap. 7 (p. 182–198) — Scripting and the Shell*
+- **Nemeth, Cap. 7 (p. 182–198) — Scripting and the Shell**
+
+- **Nemeth, Cap. 8 — User Management**
+
+- **Nemeth, Cap. 3 — Access Control and Rootly Powers**
+
+- **Nemeth, Cap. 6 — Software Installation and Management**
+
+- **Kim, Parte VI, Cap. 22 — Information Security Is Everyone’s Job Every Day**
+
+- **Kim, Parte VI, Cap. 23 — Protecting the Deployment Pipeline**
 
 </details>
 
