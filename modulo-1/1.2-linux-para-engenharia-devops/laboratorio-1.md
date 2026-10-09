@@ -14,17 +14,17 @@ O objetivo não é memorizar comandos, mas desenvolver familiaridade com o ambie
 
 Ao final desta prática, você deverá ser capaz de:
 
-* identificar informações básicas sobre o sistema Linux;
-* navegar pelo filesystem;
-* trabalhar com caminhos absolutos e relativos;
-* criar, copiar, mover e remover arquivos e diretórios;
-* visualizar e inspecionar arquivos;
-* localizar arquivos e pesquisar conteúdo;
-* compreender `stdin`, `stdout` e `stderr`;
-* redirecionar entrada e saída;
-* combinar programas utilizando pipes;
-* utilizar filtros comuns do ambiente Unix/Linux;
-* aplicar esses recursos em uma pequena investigação de logs.
+- identificar informações básicas sobre o sistema Linux;
+- navegar pelo filesystem;
+- trabalhar com caminhos absolutos e relativos;
+- criar, copiar, mover e remover arquivos e diretórios;
+- visualizar e inspecionar arquivos;
+- localizar arquivos e pesquisar conteúdo;
+- compreender `stdin`, `stdout` e `stderr`;
+- redirecionar entrada e saída;
+- combinar programas utilizando pipes;
+- utilizar filtros comuns do ambiente Unix/Linux;
+- aplicar esses recursos em uma pequena investigação de logs.
 
 ---
 
@@ -1475,8 +1475,8 @@ ls config arquivo-inexistente
 
 O comando produzirá:
 
-* uma saída válida;
-* uma mensagem de erro.
+- uma saída válida;
+- uma mensagem de erro.
 
 Agora:
 
@@ -1778,9 +1778,9 @@ Normalmente, quando utilizamos um pipe, a saída segue para o próximo programa.
 
 O comando `tee` permite:
 
-* mostrar a saída;
-* salvar uma cópia em arquivo;
-* continuar o pipeline.
+- mostrar a saída;
+- salvar uma cópia em arquivo;
+- continuar o pipeline.
 
 Execute:
 
@@ -2331,21 +2331,21 @@ rm -r ~/devops-linux-lab
 
 Ao concluir a prática, verifique se você consegue realizar as seguintes tarefas sem consultar diretamente a solução:
 
-* descobrir usuário, hostname, distribuição e versão do kernel;
-* identificar seu diretório atual;
-* navegar utilizando caminhos absolutos e relativos;
-* compreender `.`, `..` e `~`;
-* criar arquivos e diretórios;
-* copiar, mover e remover arquivos;
-* visualizar início e final de arquivos;
-* acompanhar um log com `tail -f`;
-* localizar arquivos com `find`;
-* pesquisar conteúdo utilizando `grep`;
-* diferenciar `stdin`, `stdout` e `stderr`;
-* utilizar `>`, `>>`, `<` e `2>`;
-* construir pipelines utilizando `|`;
-* combinar `grep`, `cut`, `sort`, `uniq` e `wc`;
-* utilizar `tee` para visualizar e salvar uma saída.
+- descobrir usuário, hostname, distribuição e versão do kernel;
+- identificar seu diretório atual;
+- navegar utilizando caminhos absolutos e relativos;
+- compreender `.`, `..` e `~`;
+- criar arquivos e diretórios;
+- copiar, mover e remover arquivos;
+- visualizar início e final de arquivos;
+- acompanhar um log com `tail -f`;
+- localizar arquivos com `find`;
+- pesquisar conteúdo utilizando `grep`;
+- diferenciar `stdin`, `stdout` e `stderr`;
+- utilizar `>`, `>>`, `<` e `2>`;
+- construir pipelines utilizando `|`;
+- combinar `grep`, `cut`, `sort`, `uniq` e `wc`;
+- utilizar `tee` para visualizar e salvar uma saída.
 
 ---
 
@@ -2376,6 +2376,6 @@ Esses conceitos serão utilizados para compreender como Linux controla **quem po
 
 Capítulos utilizados:
 
-* **Cap. 1 — Where to Start**
-* **Cap. 5 — The Filesystem**
-* **Cap. 7 — Scripting and the Shell**
+- **Cap. 1 — Where to Start**
+- **Cap. 5 — The Filesystem**
+- **Cap. 7 — Scripting and the Shell**

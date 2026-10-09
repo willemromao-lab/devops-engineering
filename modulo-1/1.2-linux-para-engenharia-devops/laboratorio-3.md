@@ -1,25 +1,16 @@
-# Laboratório 03 — Processos, Serviços, systemd, Logs e Troubleshooting no Linux
+# 1.2 — Linux para Engenharia DevOps
 
-## Objetivos
+## Laboratório 3 — Processos, Serviços, systemd, Logs e Troubleshooting no Linux
 
-Ao final deste laboratório, você deverá ser capaz de:
+Este material complementa a aula teórica **Linux para Engenharia DevOps — Parte 3**.
 
-- identificar processos e interpretar PID, PPID, usuário, estado, CPU e memória;
-- visualizar relações entre processos pai e filho;
-- controlar processos utilizando signals;
-- investigar informações de processos através do `/proc`;
-- compreender a relação entre processo, daemon e serviço;
-- inspecionar serviços e units gerenciados pelo systemd;
-- diferenciar `active` de `enabled`;
-- compreender o papel de targets e dependências;
-- consultar e filtrar logs com `journalctl`;
-- criar e validar uma unit `.service` própria;
-- diagnosticar uma falha utilizando estado, processos e logs;
-- validar a funcionalidade de uma aplicação, e não apenas a existência de seu processo.
+O objetivo desta prática é compreender processos, serviços, systemd e logs, aplicando esses conceitos em um cenário de investigação e troubleshooting no Linux.
 
----
+> Os exemplos foram pensados para distribuições Linux com systemd, como Ubuntu, Debian, Fedora e Rocky Linux.
 
-# 1. Pré-requisitos e validação do ambiente
+> Execute esta prática em uma VM ou ambiente descartável.
+
+## Pré-requisitos e validação do ambiente
 
 Este laboratório foi preparado para uma distribuição Linux que utilize **systemd como init**, como Ubuntu Server, Debian, Fedora, Rocky Linux ou distribuições equivalentes.
 
@@ -76,7 +67,24 @@ sudo dnf install -y psmisc curl python3
 
 ---
 
-# 2. Explorando os processos do sistema
+## Objetivos
+
+Ao final deste laboratório, você deverá ser capaz de:
+
+- identificar processos e interpretar PID, PPID, usuário, estado, CPU e memória;
+- visualizar relações entre processos pai e filho;
+- controlar processos utilizando signals;
+- investigar informações de processos através do `/proc`;
+- compreender a relação entre processo, daemon e serviço;
+- inspecionar serviços e units gerenciados pelo systemd;
+- diferenciar `active` de `enabled`;
+- compreender o papel de targets e dependências;
+- consultar e filtrar logs com `journalctl`;
+- criar e validar uma unit `.service` própria;
+- diagnosticar uma falha utilizando estado, processos e logs;
+- validar a funcionalidade de uma aplicação, e não apenas a existência de seu processo.
+
+# 1. Explorando os processos do sistema
 
 Comece observando os processos associados ao terminal atual:
 
@@ -128,7 +136,7 @@ ps -o pid,ppid,user,state,cmd -p $$
 
 ---
 
-# 3. Visualizando a hierarquia de processos
+# 2. Visualizando a hierarquia de processos
 
 Processos Linux formam uma hierarquia de processos pais e filhos.
 
@@ -163,7 +171,7 @@ echo $$
 
 ---
 
-# 4. Criando um processo controlado
+# 3. Criando um processo controlado
 
 Crie um processo simples em background:
 
@@ -200,7 +208,7 @@ Como `sleep` passa a maior parte do tempo aguardando, normalmente seu estado apa
 
 ---
 
-# 5. Foreground, background e jobs do shell
+# 4. Foreground, background e jobs do shell
 
 Liste os processos em background associados ao shell atual:
 
@@ -248,7 +256,7 @@ bg %2
 
 ---
 
-# 6. Comparando um processo em espera com um processo consumindo CPU
+# 5. Comparando um processo em espera com um processo consumindo CPU
 
 Primeiro observe o processo `sleep`:
 
@@ -307,7 +315,7 @@ Não. Compilação, compressão, processamento de dados e outras tarefas podem l
 
 ---
 
-# 7. Observando prioridade com nice
+# 6. Observando prioridade com nice
 
 Crie novamente um processo intensivo, agora com um valor de nice maior:
 
@@ -344,7 +352,7 @@ kill "$NICE_PID"
 
 ---
 
-# 8. Investigando um processo através do `/proc`
+# 7. Investigando um processo através do `/proc`
 
 Crie um novo processo:
 
@@ -365,7 +373,7 @@ Cada processo possui um diretório correspondente em `/proc`:
 ls /proc/$PROC_PID
 ```
 
-## 8.1 Status
+## 7.1 Status
 
 ```bash
 cat /proc/$PROC_PID/status
@@ -390,26 +398,26 @@ Uma forma de filtrar apenas alguns deles é:
 grep -E '^(Name|State|Pid|PPid|Uid|Gid|VmSize|VmRSS):' /proc/$PROC_PID/status
 ```
 
-## 8.2 Linha de comando
+## 7.2 Linha de comando
 
 ```bash
 tr '\0' ' ' < /proc/$PROC_PID/cmdline
 echo
 ```
 
-## 8.3 Executável
+## 7.3 Executável
 
 ```bash
 readlink /proc/$PROC_PID/exe
 ```
 
-## 8.4 Diretório de trabalho
+## 7.4 Diretório de trabalho
 
 ```bash
 readlink /proc/$PROC_PID/cwd
 ```
 
-## 8.5 File descriptors
+## 7.5 File descriptors
 
 ```bash
 ls -l /proc/$PROC_PID/fd
@@ -433,7 +441,7 @@ kill "$PROC_PID"
 
 ---
 
-# 9. Enviando signals para processos
+# 8. Enviando signals para processos
 
 O comando `kill` é, na prática, uma ferramenta para envio de signals.
 
@@ -503,7 +511,7 @@ Em operação, dê preferência a um encerramento controlado antes de recorrer a
 
 ---
 
-# 10. Explorando o systemd
+# 9. Explorando o systemd
 
 A partir desta seção, confirme novamente que o systemd está operacional:
 
@@ -536,7 +544,7 @@ Observe que os dois comandos respondem perguntas diferentes:
 
 ---
 
-# 11. Inspecionando um serviço existente
+# 10. Inspecionando um serviço existente
 
 `systemd-journald` faz parte do próprio ecossistema systemd e é uma boa unit para inspeção.
 
@@ -587,7 +595,7 @@ processo Linux
 
 ---
 
-# 12. `active`, `enabled` e `static`
+# 11. `active`, `enabled` e `static`
 
 Verifique se o journald está ativo:
 
@@ -618,7 +626,7 @@ Mais adiante criaremos nossa própria unit para observar diretamente a diferenç
 
 ---
 
-# 13. Inspecionando uma unit file
+# 12. Inspecionando uma unit file
 
 Exiba a definição utilizada pelo systemd:
 
@@ -642,7 +650,7 @@ systemctl show systemd-journald.service \
 
 ---
 
-# 14. Targets e dependências
+# 13. Targets e dependências
 
 Descubra o target padrão do sistema:
 
@@ -678,7 +686,7 @@ Lembre-se de que **dependência** e **ordem de inicialização** não são exata
 
 ---
 
-# 15. Consultando o journal
+# 14. Consultando o journal
 
 Visualize eventos recentes:
 
@@ -718,7 +726,7 @@ journalctl -u systemd-journald.service --since "1 hour ago"
 
 ---
 
-# 16. Filtrando logs por prioridade
+# 15. Filtrando logs por prioridade
 
 Visualize erros ou eventos mais graves:
 
@@ -749,7 +757,7 @@ debug
 
 ---
 
-# 17. Criando um usuário para o serviço do laboratório
+# 16. Criando um usuário para o serviço do laboratório
 
 Criaremos uma aplicação simples executada por um usuário de sistema próprio.
 
@@ -783,7 +791,7 @@ getent group labsvc
 
 ---
 
-# 18. Criando a aplicação `lab-heartbeat`
+# 17. Criando a aplicação `lab-heartbeat`
 
 Crie o script:
 
@@ -844,7 +852,7 @@ O `trap` deverá registrar o encerramento antes do processo terminar.
 
 ---
 
-# 19. Criando a primeira unit `.service`
+# 18. Criando a primeira unit `.service`
 
 Crie:
 
@@ -882,7 +890,7 @@ sudo systemctl daemon-reload
 
 ---
 
-# 20. Iniciando o serviço
+# 19. Iniciando o serviço
 
 Inicie:
 
@@ -941,7 +949,7 @@ processo Linux
 
 ---
 
-# 21. `start` não é `enable`
+# 20. `start` não é `enable`
 
 O serviço está executando. Verifique se está habilitado para inicialização automática:
 
@@ -996,7 +1004,7 @@ enable → configura participação na inicialização apropriada
 
 ---
 
-# 22. Consultando os logs do serviço
+# 21. Consultando os logs do serviço
 
 Nosso script escreve em `stdout`. Como foi iniciado pelo systemd, essa saída é coletada pelo journal na configuração padrão das distribuições systemd.
 
@@ -1030,7 +1038,7 @@ Isso encerra o `journalctl`, não o serviço.
 
 ---
 
-# 23. Observando o encerramento com SIGTERM
+# 22. Observando o encerramento com SIGTERM
 
 Em um terminal, acompanhe os logs:
 
@@ -1076,7 +1084,7 @@ encerramento da aplicação
 
 ---
 
-# 24. Restart cria uma nova execução
+# 23. Restart cria uma nova execução
 
 Descubra o PID atual:
 
@@ -1102,7 +1110,7 @@ O PID deverá ser diferente, pois a execução anterior terminou e uma nova inst
 
 ---
 
-# 25. Troubleshooting: quebrando propositalmente o serviço
+# 24. Troubleshooting: quebrando propositalmente o serviço
 
 Agora vamos introduzir uma falha controlada.
 
@@ -1154,7 +1162,7 @@ O comando deverá falhar.
 
 ---
 
-# 26. Investigando antes de corrigir
+# 25. Investigando antes de corrigir
 
 Imagine que essa falha ocorreu em produção. Não abra vários arquivos e não altere diversas coisas simultaneamente.
 
@@ -1208,7 +1216,7 @@ caminho do executável está incorreto
 
 ---
 
-# 27. Validando a hipótese
+# 26. Validando a hipótese
 
 Veja a configuração efetiva da unit:
 
@@ -1228,7 +1236,7 @@ Temos agora uma hipótese sustentada por evidências.
 
 ---
 
-# 28. Corrigindo e validando
+# 27. Corrigindo e validando
 
 Edite a unit novamente:
 
@@ -1308,7 +1316,7 @@ Validação final
 
 ---
 
-# 29. Desafio: processo rodando não significa aplicação saudável
+# 28. Desafio: processo rodando não significa aplicação saudável
 
 Agora criaremos uma aplicação HTTP simples.
 
@@ -1343,7 +1351,7 @@ Se não houver saída, a porta está livre para o laboratório.
 
 ---
 
-# 30. Criando o serviço web
+# 29. Criando o serviço web
 
 Crie:
 
@@ -1406,7 +1414,7 @@ healthy
 
 ---
 
-# 31. Criando uma falha funcional
+# 30. Criando uma falha funcional
 
 Remova o arquivo utilizado como endpoint de saúde:
 
@@ -1449,7 +1457,7 @@ Esse é um conceito central para operação de aplicações:
 
 ---
 
-# 32. Correlacionando a falha com os logs
+# 31. Correlacionando a falha com os logs
 
 Consulte os logs do serviço web:
 
@@ -1487,7 +1495,7 @@ curl -fsS http://localhost:18080/health.txt
 
 ---
 
-# 33. Desafio de troubleshooting
+# 32. Desafio de troubleshooting
 
 Você recebeu o seguinte chamado:
 
@@ -1528,7 +1536,7 @@ Não existe obrigação de utilizar todos os comandos. A escolha da ferramenta d
 
 ---
 
-# 34. Limpando o ambiente
+# 33. Limpando o ambiente
 
 Pare e desabilite os serviços:
 
@@ -1577,7 +1585,7 @@ sudo systemctl reset-failed
 
 ---
 
-# 35. Checklist final
+# 34. Checklist final
 
 Ao concluir o laboratório, você deve conseguir explicar a diferença entre:
 
@@ -1629,7 +1637,7 @@ Troubleshooting
 
 ---
 
-# 36. Resultado esperado
+# 35. Resultado esperado
 
 O objetivo deste laboratório não é só aprender comandos como:
 
